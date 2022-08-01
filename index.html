@@ -55,7 +55,7 @@
       <section class="section-hero">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button type="button" class="main-button">Заказать услугу</button>
+          <button type="button" class="main-button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
 
@@ -118,12 +118,21 @@
           <ul class="list doing-list card-set">
             <li class="doing-item card-item">
               <img src="./images/box-1.jpg" alt="Разработка сайта" width="370" />
+              <div class="doing-box">
+                <p class="doing-text">Десктопні додатки</p>
+              </div>
             </li>
             <li class="doing-item card-item">
               <img src="./images/box-2.jpg" alt="Тестирование сайта" width="370" />
+              <div class="doing-box">
+                <p class="doing-text">Мобільні додатки</p>
+              </div>
             </li>
             <li class="doing-item card-item">
               <img src="./images/box-3.jpg" alt="Разработка дизайна" width="370" />
+              <div class="doing-box">
+                <p class="doing-text">Дизайнерські рішення</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -583,6 +592,19 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal Window -->
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" data-modal-close>
+          <svg width="20" height="20" class="modal-icon">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <script src="./js/modal.js"></script>
   </body>
 </html>
