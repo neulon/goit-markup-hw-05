@@ -126,6 +126,7 @@ img {
 
 .contacts-link {
   transition: color var(--animation);
+  position: relative;
 }
 
 .contacts-link:focus,
@@ -148,21 +149,22 @@ img {
 
 .nav-item:not(:last-child) {
   margin-right: 50px;
-  position: relative;
 }
 
 .nav-link {
   transition: color var(--animation);
+  position: relative;
 }
 
 .nav-link:focus,
-.nav-link:hover {
+.nav-link:hover,
+.active {
   color: var(--hover-text);
 }
 
 .nav-link.active::after {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
 
   content: " ";
   background: var(--hover-text);
@@ -257,6 +259,7 @@ img {
 
 .feature-title {
   margin-bottom: 10px;
+  color: var(--main-text);
 }
 
 .doing-item {
@@ -270,16 +273,12 @@ img {
   padding-top: 27px;
   padding-bottom: 27px;
   text-align: center;
+  color: var(--white-text);
   background: rgba(47, 48, 58, 0.8);
 }
 
 .doing-text {
-  font-weight: 700;
   line-height: 1.14;
-  color: var(--white-text);
-  text-transform: uppercase;
-
-  
 }
 
 .section-title {
@@ -291,11 +290,11 @@ img {
   margin-bottom: 50px;
 }
 
-.feature-title {
+.item-title {
   font-weight: 700;
   line-height: 1.42;
   text-transform: uppercase;
-  color: var(--main-text);
+  
   font-size: 14px;
 }
 
@@ -405,7 +404,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 24px;
+  padding: 63px 24px;
 
   position: absolute;
   top: 0;
@@ -419,7 +418,8 @@ img {
   transition: transform 500ms ease;
 }
 
-.job-link:hover .overlay {
+.job-link:hover .overlay,
+.job-link:focus .overlay {
   transform: translateY(0);
 }
 
@@ -428,6 +428,8 @@ img {
   line-height: 1.6;
   color: var(--white-text);
   text-align: center;
+  height: 100%;
+  overflow: auto;
 }
 
 .job-title {
@@ -499,13 +501,9 @@ img {
 }
 
 .footer-social-title {
-  font-family: "Roboto";
-  font-weight: 700;
-  font-size: 14px;
   line-height: 1.14;
   color: var(--white-text);
   margin-bottom: 20px;
-  text-transform: uppercase;
 }
 
 .footer-social {
@@ -584,7 +582,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 400ms ease 50ms, opasity 400ms ease 400ms;
+  transition: transform var(--animation), var(--animation);
 }
 
 .backdrop.is-hidden .modal {
